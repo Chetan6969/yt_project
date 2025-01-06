@@ -1,0 +1,16 @@
+{
+  "name": "yt_backened",
+  "version": "1.0.0",
+  "description": "a mega project for yt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javacript",
+    "backened",
+    "frontened"
+  ],
+  "author": "Chetan Sen",
+  "license": "ISC"
+}
