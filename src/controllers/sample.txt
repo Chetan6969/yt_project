@@ -1,0 +1,9 @@
+    // Get user details from frontened
+    // Validation - Not empty
+    // Check if user already exists: username, email
+    // Check for images, Check for avatar
+    // Upload them to cloudnary, Avatar
+    // Create user object - Create entry in DB
+    // Remove password and refresh token field from response 
+    // Check for user creation 
+    // Return response

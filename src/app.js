@@ -2,7 +2,14 @@ import express from "express"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 
+// Import Routes
+import userRouter from './routes/user.routes.js'
 const app = express()
+
+app.use(express.json()); 
+// routers declaration
+
+app.use("/api/v1/users", userRouter)
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
