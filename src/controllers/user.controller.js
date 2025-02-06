@@ -46,22 +46,22 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(400,"All field required !!! line 30(user.controller.js)");
         
     }
-    const existedUser = await User.findOne({ //Checking if user already exists
+    const existedUser = await User.findOne({ 
         $or:[{ userName }, { email }]
     })
 
     if(existedUser){ // If true then return this code 409 error
-        throw new ApiError(409, "User with email or userna,e already exists !!! Line 38(user.controllers.js)")
+        throw new ApiError(409, "User with email or username already exists");
     }
 
-    const avatarlocalPath = req.files?.avatar[0]?.path
-    console.log(avatarlocalPath,"This is local path checking");
+    const avatarlocalPath = req.files?.avatar?.path
+    console.log(avatarlocalPath,"This is local path checking ");
     const coverImageLocalPath = req.files?.coverImage[0]?.path
 
     if(!avatarlocalPath){
         throw new ApiError(400, "Avater Image is required !!")
     }
-    // Give proper path that is stored by multer
+    // Gives proper path that is stored by multer
 
     const avatar = await uploadOnCloudinary(avatarlocalPath)
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
