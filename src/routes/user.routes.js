@@ -6,7 +6,7 @@ import verifyJWT from "../middlewares/auth.middleware.js";
 const router = Router()
 
 router.route("/register").post(
-    upload.fields([//Uploads comes fro multer for uploading photos on cloudnary.
+    upload.fields([//Upload comes fro multer for uploading photos on cloudnary.
         {
             name: "avatar",
             maxCount: 1,
